@@ -33,7 +33,7 @@ public class GuestbookDao {
 			//3.statement 생성
 			stmt = connection.createStatement();
 			
-			String sql="select no, name, password, message, to_char(reg_date,'YYYY-MM-DD HH:MI:SS') from guestbook";
+			String sql="select no, name, password, message, to_char(reg_date,'YYYY-MM-DD HH:MI:SS') from guestbook ORDER BY no desc";
 			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()){
